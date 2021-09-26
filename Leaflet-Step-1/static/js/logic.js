@@ -15,7 +15,7 @@ function createFeatures(earthquakeData) {
   // Give each feature a popup that describes the place and time of the earthquake.
   function onEachFeature(feature, layer) {
     layer.bindPopup(
-      `<h3>${feature.properties.place}<br>${
+      `<h3>Location: ${feature.properties.place}<br>Magnitude: ${
         feature.properties.mag
       }</h3><hr><p>${new Date(feature.properties.time)}</p>`
     );
@@ -59,8 +59,8 @@ function createMap(earthquakes) {
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load.
   var myMap = L.map("map", {
-    center: [37.09, -95.71],
-    zoom: 5,
+    center: [20.0, -4.0],
+    zoom: 3,
     layers: [street, earthquakes],
   });
 
