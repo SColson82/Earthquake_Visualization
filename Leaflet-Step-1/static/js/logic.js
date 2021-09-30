@@ -1,6 +1,6 @@
 // Store our API endpoint as queryUrl.
 var queryUrl =
-  "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
+  "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 // Perform a GET request to the query URL/
 d3.json(queryUrl).then(function (data) {
@@ -13,15 +13,37 @@ d3.json(queryUrl).then(function (data) {
       }</h3><hr><p>${new Date(feature.properties.time)}</p>`
     );
   }
+
   function generateEarthquakeRadius(depth) {
-    return depth / 10;
+    return Math.sqrt(depth / 3.1415);
   }
   function generateEarthquakeColor(magnitude) {
-    if (magnitude > 100) {
+    if (magnitude > 9.0) {
+      return "#160206";
+    }
+    if (magnitude > 8.0) {
+      return "#2c040c";
+    }
+    if (magnitude > 7.0) {
       return "#420612";
     }
-    if (magnitude > 90) {
+    if (magnitude > 6.0) {
       return "#580818";
+    }
+    if (magnitude > 5.0) {
+      return "#6e0a1e";
+    }
+    if (magnitude > 4.0) {
+      return "#840c24";
+    }
+    if (magnitude > 3.0) {
+      return "#9a0e2a";
+    }
+    if (magnitude > 2.0) {
+      return "#b01030";
+    }
+    if (magnitude > 1.0) {
+      return "#c61236";
     } else {
       return "#dc143c";
     }
@@ -83,15 +105,17 @@ d3.json(queryUrl).then(function (data) {
   var baseMaps = {
     "Street Map": street,
     "Topographic Map": topo,
-    "Dark": dark,
-    "Satellite": satellite,
+    Dark: dark,
+    Satellite: satellite,
   };
+
   // Create our map, giving it the streetmap and earthquakes layers to display on load.
   var myMap = L.map("map", {
     center: [20.0, -4.0],
     zoom: 3,
     layers: [satellite, earthquakes],
   });
+
   var tectonicPlates;
 
   d3.json(
@@ -99,14 +123,15 @@ d3.json(queryUrl).then(function (data) {
   ).then(function (tectonicPlateData) {
     tectonicPlates = new L.LayerGroup();
     L.geoJson(tectonicPlateData).addTo(tectonicPlates);
-    tectonicPlates.addTo(myMap)
+    tectonicPlates.addTo(myMap);
+    console.log(tectonicPlates);
   });
 
   // Create an overlay object to hold our overlay.
   var overlayMaps = {
     // Add Tectonic Plates
     // "Tectonic Plates": tectonicPlates,
-    "Earthquakes": earthquakes,
+    Earthquakes: earthquakes,
   };
 
   // Create a layer control.
@@ -122,8 +147,19 @@ d3.json(queryUrl).then(function (data) {
   var legend = L.control({ position: "bottomright" });
   legend.onAdd = function () {
     var div = L.DomUtil.create("div", "info legend");
-    var limits = [0, 90, 100];
-    var colors = ["#dc143c", "#580818", "#420612"];
+    var limits = [0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0];
+    var colors = [
+      "#dc143c",
+      "#c61236",
+      "#b01030",
+      "#9a0e2a",
+      "#840c24",
+      "#6e0a1e",
+      "#580818",
+      "#420612",
+      "#2c040c",
+      "#160206",
+    ];
 
     // Add the minimum and maximum.
     var legendInfo = `

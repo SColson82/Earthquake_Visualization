@@ -41,9 +41,32 @@
 
 // });
 
-// return "#420612";
-// }
-// if (magnitude > 90) {
-//   return "#580818";
-// } else {
-//   return "#dc143c";
+// if (magnitude > 9.0) {
+//     return "#160206";
+//   }
+//   if (magnitude > 8.0) {
+//     return "#2c040c";
+//   }
+//   if (magnitude > 7.0) {
+//     return "#420612";
+//   }
+//   if (magnitude > 6.0) {
+//     return "#580818";
+//   }
+//   if (magnitude > 5.0) {
+//     return "#6e0a1e";
+//   }
+//   if (magnitude > 4.0) {
+//     return "#840c24";
+//   }
+//   if (magnitude > 3.0) {
+//     return "#9a0e2a";
+//   }
+//   if (magnitude > 2.0) {
+//     return "#b01030";
+//   }
+//   if (magnitude > 1.0) {
+//     return "#c61236";
+//   } else {
+//     return "#dc143c";
+//   }
