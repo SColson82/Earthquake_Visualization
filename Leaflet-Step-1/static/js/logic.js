@@ -116,12 +116,11 @@ d3.json(queryUrl).then(function (data) {
     layers: [satellite, earthquakes],
   });
 
-  var tectonicPlates;
+  var tectonicPlates = new L.LayerGroup();
 
   d3.json(
     "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
   ).then(function (tectonicPlateData) {
-    tectonicPlates = new L.LayerGroup();
     L.geoJson(tectonicPlateData).addTo(tectonicPlates);
     tectonicPlates.addTo(myMap);
     console.log(tectonicPlates);
@@ -130,7 +129,7 @@ d3.json(queryUrl).then(function (data) {
   // Create an overlay object to hold our overlay.
   var overlayMaps = {
     // Add Tectonic Plates
-    // "Tectonic Plates": tectonicPlates,
+    "Tectonic Plates": tectonicPlates,
     Earthquakes: earthquakes,
   };
 
