@@ -19,33 +19,33 @@ d3.json(queryUrl).then(function (data) {
   }
   function generateEarthquakeColor(magnitude) {
     if (magnitude > 9.0) {
-      return "#160206";
+      return "#330000";
     }
     if (magnitude > 8.0) {
-      return "#2c040c";
+      return "#660000";
     }
     if (magnitude > 7.0) {
-      return "#420612";
+      return "#990000";
     }
     if (magnitude > 6.0) {
-      return "#580818";
+      return "#CC0000";
     }
     if (magnitude > 5.0) {
-      return "#6e0a1e";
+      return "#CC6600";
     }
     if (magnitude > 4.0) {
-      return "#840c24";
+      return "#FF8000";
     }
     if (magnitude > 3.0) {
-      return "#9a0e2a";
+      return "#FF9933";
     }
     if (magnitude > 2.0) {
-      return "#b01030";
+      return "#FFB266";
     }
     if (magnitude > 1.0) {
-      return "#c61236";
+      return "#FFFF00";
     } else {
-      return "#dc143c";
+      return "#FFFF99";
     }
   }
   function generateEarthquakeStyle(feature) {
@@ -148,16 +148,16 @@ d3.json(queryUrl).then(function (data) {
     var div = L.DomUtil.create("div", "info legend");
     var limits = [0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0];
     var colors = [
-      "#dc143c",
-      "#c61236",
-      "#b01030",
-      "#9a0e2a",
-      "#840c24",
-      "#6e0a1e",
-      "#580818",
-      "#420612",
-      "#2c040c",
-      "#160206",
+      "#FFFF99",
+      "#FFFF00",
+      "#FFB266",
+      "#FF9933",
+      "#FF8000",
+      "#CC6600",
+      "#CC0000",
+      "#990000",
+      "#660000",
+      "#330000",
     ];
 
     // Add the minimum and maximum.
