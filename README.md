@@ -54,4 +54,7 @@ Through exploration of the data, I was able to show the earthquake activity over
 (ONE MONTH OF DATA ENDING AT APPROXIMATELY OCTOBER 3, 2021 AT 7 PM CST)
 ![image](https://user-images.githubusercontent.com/83737584/135775156-0710d473-bdca-4298-8532-acb10467fbc3.png)
 
+## Check It Out for Yourself:
+https://scolson82.github.io/Leaflet-Challenge/
+
 
