@@ -56,5 +56,10 @@ Through exploration of the data, I was able to show the earthquake activity over
 
 ## Check It Out for Yourself:
 https://scolson82.github.io/Leaflet-Challenge/
+<hr>
+Contact:
+
+* https://www.linkedin.com/in/sharon-colson-515222210/
+* sharon.colson@gmail.com
 
 
