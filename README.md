@@ -55,11 +55,11 @@ Through exploration of the data, I was able to show the earthquake activity over
 ![image](https://user-images.githubusercontent.com/83737584/135775156-0710d473-bdca-4298-8532-acb10467fbc3.png)
 
 ## Check It Out for Yourself:
-https://scolson82.github.io/Leaflet-Challenge/
+https://scolson82.github.io/Earthquake_Visualization/
 <hr>
 Contact:
 
-* https://www.linkedin.com/in/sharon-colson-515222210/
+* https://www.linkedin.com/in/sharon-colson
 * sharon.colson@gmail.com
 
 
